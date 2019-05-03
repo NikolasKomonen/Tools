@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <p>Convert to Java Multiline String Tool</p>
+
+  <textarea id = "myInputText"
+    rows = "20"
+    cols = "80"
+    { overflow-y: scroll;} placeholder="Input"></textarea>
+  <button name="convert" 
+    onclick="convertClick()">
+    Convert
+  </button>
+
+  <textarea id = "myOutputText"
+  rows = "20"
+  cols = "80"
+  { overflow-y: scroll; } placeholder="Output"></textarea>
+
+  <br>
+
+  <p>Line Separation</p>
+  <form action="">
+    <input type="radio" name="lineSeparator" value="\n" checked="true"> \n </input> <br>
+    <input type="radio" name="lineSeparator" value="\r\n"> \r\n </input> <br>
+  </form>
+  <br>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="scripts/script.js"></script>
+  <script>
+    function convertClick() {
+      converToJavaMultilineString(
+                                  document.getElementById('myInputText').value, 
+                                  document.querySelector('input[name=\'lineSeparator\']:checked').value);
+    }
+  </script>
+</body>
+
+</html>
